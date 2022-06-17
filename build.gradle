@@ -44,6 +44,11 @@ dependencies {
     implementation 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.projectlombok:lombok'
+
+    implementation('com.h2database:h2')
+    //인메모리 관계형 데이터베이스
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    //스프링 부트용 spring data jpa추상화 라이브러리
 }
 configurations {
     compileOnly {
