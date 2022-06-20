@@ -36,6 +36,7 @@ public class PostsRepositoryTest {
                 .content(content)
                 .author("jeongwon")
                 .build());
+        /*객체 생성할 수 있는 빌더를 builer()함수를 통해 얻고, build()를 통해 빌더를 작동시켜 객체 생성*/
 
         //when
         /*.findAll 모든 데이터 조회*/

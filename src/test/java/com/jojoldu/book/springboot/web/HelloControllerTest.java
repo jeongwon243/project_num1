@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.hamcrest.Matchers.is;
@@ -20,9 +21,9 @@ public class HelloControllerTest {
     /* 스프링이 관리하는 빈을 주입*/
     private MockMvc mvc;
     /* 웹API를 테스트할 때 사용, 스프링 mvc테스트 시작점, HTTP,GET,POST에대한 API테스트 가능*/
-    
+
     @Test
-    public void hello가_리턴된다() throws Exception{
+    public void hello가_리턴된다() throws Exception {
 
         String hello = "hello";
 
@@ -32,14 +33,14 @@ public class HelloControllerTest {
     }
 
     @Test
-    public void helloDto가_리턴된다() throws Exception{
+    public void helloDto가_리턴된다() throws Exception {
         String name = "정원";
         int amount = 10000;
 
         /* param API테스트 할때 사용될 요청 파라미터 설정(String만 허용)
-        *  jsonPath  json값을 필드별로 검증할 수 있는 메소드
-        * */
-        mvc.perform(get("/hello/dto").param("name",name).param("amount",String.valueOf(amount)))
+         *  jsonPath  json값을 필드별로 검증할 수 있는 메소드
+         * */
+        mvc.perform(get("/hello/dto").param("name", name).param("amount", String.valueOf(amount)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is(name)))
                 .andExpect(jsonPath("$.amount", is(amount)));
