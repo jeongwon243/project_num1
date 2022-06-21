@@ -29,7 +29,7 @@ public class Posts extends BaseTimeEntity {
 
     @Builder
     /*빌더 패턴 클래스*/
-    /*garden branch윤자씨*/
+    /*garden branch윤자씨바보*/
     public Posts(String title, String content, String author){
         this.title = title;
         this.content = content;
