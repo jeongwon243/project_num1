@@ -25,4 +25,6 @@ public class BaseTimeEntity {
     /*조회한 entity의 값을 변경할 때 시간이 자동저장됨*/
     private LocalDate modifiedDate;
 
+    /*git request pull test*/
+
 }
